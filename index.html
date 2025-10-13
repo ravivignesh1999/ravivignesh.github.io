@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+    <canvas id="net-bg" aria-hidden="true"></canvas>
     <nav class="navbar" aria-label="Primary">
         <div class="nav-content">
             <div class="nav-left">
@@ -172,12 +173,12 @@
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <img src="images/logos/meta-logo.png" alt="Meta Logo" class="company-logo">
+                            <img src="images/logos/tesla-logo.png" alt="Tesla Logo" class="company-logo">
                             <div class="timeline-text">
-                                <div class="timeline-date">May 2022 - August 2022</div>
+                                <div class="timeline-date">January 2023 - May 2023</div>
                                 <h3>Software Engineer Intern</h3>
-                                <h4>Meta Platforms</h4>
-                                <p class="location">Menlo Park, CA</p>
+                                <h4>Tesla Inc</h4>
+                                <p class="location">Fremont, CA</p>
                             </div>
                         </div>
                     </div>
@@ -185,12 +186,12 @@
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <img src="images/logos/tesla-logo.png" alt="Tesla Logo" class="company-logo">
+                            <img src="images/logos/meta-logo.png" alt="Meta Logo" class="company-logo">
                             <div class="timeline-text">
-                                <div class="timeline-date">January 2023 - May 2023</div>
+                                <div class="timeline-date">May 2022 - August 2022</div>
                                 <h3>Software Engineer Intern</h3>
-                                <h4>Tesla Inc</h4>
-                                <p class="location">Fremont, CA</p>
+                                <h4>Meta Platforms</h4>
+                                <p class="location">Menlo Park, CA</p>
                             </div>
                         </div>
                     </div>
@@ -330,6 +331,313 @@
             .map(id => document.getElementById(id))
             .filter(Boolean);
 
+        const netCanvas = document.getElementById('net-bg');
+        const netCtx = netCanvas ? netCanvas.getContext('2d') : null;
+        let netNodes = [];
+        let animationFrameId = null;
+        let canvasWidth = window.innerWidth;
+        let canvasHeight = window.innerHeight;
+        let networkInitialized = false;
+
+        const prefersDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        const palettes = {
+            light: {
+                nodeColors: ['#2563eb', '#f97316', '#22c55e', '#6366f1', '#db2777'],
+                linkColor: '#334155',
+                linkOpacity: 0.52,
+                nodeRadius: [2.2, 4.5],
+                speed: 0.52,
+                maxDistance: 150
+            },
+            dark: {
+                nodeColors: ['#f59e0b', '#ef4444', '#10b981', '#3b82f6'],
+                linkColor: '#3d4a5f',
+                linkOpacity: 0.5,
+                nodeRadius: [2.1, 4.2],
+                speed: 0.55,
+                maxDistance: 160
+            }
+        };
+
+        const randomBetween = (min, max) => Math.random() * (max - min) + min;
+
+        const hexToRgb = hex => {
+            const normalized = hex.replace('#', '');
+            const expanded = normalized.length === 3
+                ? normalized.split('').map(char => char + char).join('')
+                : normalized.padStart(6, '0');
+            const intVal = parseInt(expanded, 16);
+            return {
+                r: (intVal >> 16) & 255,
+                g: (intVal >> 8) & 255,
+                b: intVal & 255
+            };
+        };
+
+        const isDarkMode = () => {
+            const themeAttr = html.getAttribute('data-theme');
+            if (themeAttr === 'dark') {
+                return true;
+            }
+            if (themeAttr === 'light') {
+                return false;
+            }
+            return prefersDarkQuery.matches;
+        };
+
+        const getPalette = () => {
+            const palette = palettes[isDarkMode() ? 'dark' : 'light'];
+            if (!palette.linkRgb) {
+                palette.linkRgb = hexToRgb(palette.linkColor);
+            }
+            return palette;
+        };
+
+        const computeNodeCount = () => {
+            if (canvasWidth >= 1600) return 90;
+            if (canvasWidth >= 1200) return 75;
+            if (canvasWidth >= 992) return 62;
+            if (canvasWidth >= 768) return 52;
+            if (canvasWidth >= 576) return 45;
+            return 36;
+        };
+
+        const ensureVelocity = speed => {
+            let vx = (Math.random() * 2 - 1) * speed;
+            let vy = (Math.random() * 2 - 1) * speed;
+            if (Math.abs(vx) < speed * 0.15) {
+                vx = (vx >= 0 ? 1 : -1) * speed * 0.15;
+            }
+            if (Math.abs(vy) < speed * 0.15) {
+                vy = (vy >= 0 ? 1 : -1) * speed * 0.15;
+            }
+            return { vx, vy };
+        };
+
+        const resizeCanvas = () => {
+            if (!netCanvas || !netCtx) {
+                return;
+            }
+            const dpr = window.devicePixelRatio || 1;
+            canvasWidth = window.innerWidth;
+            canvasHeight = window.innerHeight;
+            netCanvas.width = canvasWidth * dpr;
+            netCanvas.height = canvasHeight * dpr;
+            netCanvas.style.width = `${canvasWidth}px`;
+            netCanvas.style.height = `${canvasHeight}px`;
+            netCtx.setTransform(1, 0, 0, 1, 0, 0);
+            netCtx.scale(dpr, dpr);
+        };
+
+        const createNodes = (preservePositions = false) => {
+            if (!netCtx) {
+                return;
+            }
+
+            const palette = getPalette();
+            const [minRadius, maxRadius] = palette.nodeRadius;
+            const speed = palette.speed;
+            const desiredCount = computeNodeCount();
+
+            const makeNode = () => {
+                const reduceMotion = reduceMotionQuery.matches;
+                const { vx, vy } = reduceMotion ? { vx: 0, vy: 0 } : ensureVelocity(speed);
+                return {
+                    x: Math.random() * canvasWidth,
+                    y: Math.random() * canvasHeight,
+                    vx,
+                    vy,
+                    radius: randomBetween(minRadius, maxRadius),
+                    color: palette.nodeColors[Math.floor(Math.random() * palette.nodeColors.length)]
+                };
+            };
+
+            if (preservePositions && netNodes.length) {
+                if (netNodes.length > desiredCount) {
+                    netNodes.length = desiredCount;
+                } else {
+                    while (netNodes.length < desiredCount) {
+                        netNodes.push(makeNode());
+                    }
+                }
+
+                netNodes.forEach(node => {
+                    node.radius = randomBetween(minRadius, maxRadius);
+                    node.color = palette.nodeColors[Math.floor(Math.random() * palette.nodeColors.length)];
+                    if (!reduceMotionQuery.matches) {
+                        const velocity = ensureVelocity(speed);
+                        node.vx = velocity.vx;
+                        node.vy = velocity.vy;
+                    } else {
+                        node.vx = 0;
+                        node.vy = 0;
+                    }
+                    node.x = Math.max(0, Math.min(node.x, canvasWidth));
+                    node.y = Math.max(0, Math.min(node.y, canvasHeight));
+                });
+
+                return;
+            }
+
+            netNodes = Array.from({ length: desiredCount }, makeNode);
+        };
+
+        const drawNetwork = paused => {
+            if (!netCtx) {
+                return;
+            }
+
+            const palette = getPalette();
+            const { linkRgb, linkOpacity, maxDistance } = palette;
+            const maxDistanceSq = maxDistance * maxDistance;
+
+            netCtx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+            for (let i = 0; i < netNodes.length; i += 1) {
+                const nodeA = netNodes[i];
+                for (let j = i + 1; j < netNodes.length; j += 1) {
+                    const nodeB = netNodes[j];
+                    const dx = nodeA.x - nodeB.x;
+                    const dy = nodeA.y - nodeB.y;
+                    const distanceSq = dx * dx + dy * dy;
+
+                    if (distanceSq > maxDistanceSq) {
+                        continue;
+                    }
+
+                    const distance = Math.sqrt(distanceSq);
+                    const alpha = linkOpacity * (1 - distance / maxDistance);
+
+                    if (alpha <= 0) {
+                        continue;
+                    }
+
+                    netCtx.strokeStyle = `rgba(${linkRgb.r}, ${linkRgb.g}, ${linkRgb.b}, ${alpha.toFixed(3)})`;
+                    netCtx.lineWidth = 1;
+                    netCtx.beginPath();
+                    netCtx.moveTo(nodeA.x, nodeA.y);
+                    netCtx.lineTo(nodeB.x, nodeB.y);
+                    netCtx.stroke();
+                }
+            }
+
+            netNodes.forEach(node => {
+                if (!paused) {
+                    node.x += node.vx;
+                    node.y += node.vy;
+
+                    if (node.x <= 0 || node.x >= canvasWidth) {
+                        node.vx *= -1;
+                        node.x = Math.max(0, Math.min(node.x, canvasWidth));
+                    }
+                    if (node.y <= 0 || node.y >= canvasHeight) {
+                        node.vy *= -1;
+                        node.y = Math.max(0, Math.min(node.y, canvasHeight));
+                    }
+                }
+
+                netCtx.beginPath();
+                netCtx.fillStyle = node.color;
+                netCtx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                netCtx.fill();
+            });
+        };
+
+        const animateNetwork = () => {
+            drawNetwork(false);
+            animationFrameId = window.requestAnimationFrame(animateNetwork);
+        };
+
+        const startAnimation = () => {
+            if (!netCtx) {
+                return;
+            }
+            if (animationFrameId) {
+                window.cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+            const paused = reduceMotionQuery.matches;
+            drawNetwork(paused);
+            if (!paused) {
+                animationFrameId = window.requestAnimationFrame(animateNetwork);
+            }
+        };
+
+        const refreshNetwork = (preservePositions = true) => {
+            if (!netCtx) {
+                return;
+            }
+            createNodes(preservePositions);
+            startAnimation();
+        };
+
+        const initNetwork = () => {
+            if (!netCtx || networkInitialized) {
+                return;
+            }
+            networkInitialized = true;
+            resizeCanvas();
+            createNodes(false);
+            startAnimation();
+        };
+
+        const ensureNetworkReady = preservePositions => {
+            if (!netCtx) {
+                return;
+            }
+            if (!networkInitialized) {
+                initNetwork();
+            } else {
+                refreshNetwork(preservePositions);
+            }
+        };
+
+        if (netCtx) {
+            if (document.readyState === 'complete') {
+                initNetwork();
+            } else {
+                window.addEventListener('load', initNetwork, { once: true });
+            }
+
+            window.addEventListener('resize', () => {
+                if (!networkInitialized) {
+                    initNetwork();
+                    return;
+                }
+                resizeCanvas();
+                refreshNetwork(false);
+            });
+
+            const handleThemeChange = () => {
+                ensureNetworkReady(true);
+            };
+
+            const themeObserver = new MutationObserver(handleThemeChange);
+            themeObserver.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+
+            const handleSystemThemeChange = () => {
+                handleThemeChange();
+            };
+
+            const handleMotionChange = () => {
+                ensureNetworkReady(true);
+            };
+
+            if (typeof prefersDarkQuery.addEventListener === 'function') {
+                prefersDarkQuery.addEventListener('change', handleSystemThemeChange);
+            } else if (typeof prefersDarkQuery.addListener === 'function') {
+                prefersDarkQuery.addListener(handleSystemThemeChange);
+            }
+
+            if (typeof reduceMotionQuery.addEventListener === 'function') {
+                reduceMotionQuery.addEventListener('change', handleMotionChange);
+            } else if (typeof reduceMotionQuery.addListener === 'function') {
+                reduceMotionQuery.addListener(handleMotionChange);
+            }
+        }
+
         function applyTheme(theme) {
             const normalized = theme === 'dark' ? 'dark' : 'light';
             html.setAttribute('data-theme', normalized);
@@ -339,7 +647,9 @@
         }
 
         const storedTheme = localStorage.getItem('theme');
-        applyTheme(storedTheme || 'light');
+        const initialTheme = storedTheme || 'light';
+        applyTheme(initialTheme);
+        ensureNetworkReady(false);
 
         if (themeToggle) {
             themeToggle.addEventListener('click', () => {
@@ -347,6 +657,7 @@
                 const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
                 applyTheme(nextTheme);
                 localStorage.setItem('theme', nextTheme);
+                ensureNetworkReady(true);
             });
         }
 
