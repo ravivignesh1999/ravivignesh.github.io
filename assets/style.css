@@ -109,6 +109,22 @@
     color: var(--accent-primary);
     font-size: 1.25rem;
     font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.3s ease;
+}
+
+.nav-name:hover {
+    color: var(--accent-secondary);
+}
+
+.nav-name:focus-visible {
+    color: var(--accent-secondary);
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+    border-radius: 6px;
 }
 
 .nav-right {
