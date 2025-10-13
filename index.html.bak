@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sabrish Kumar Pradeep Kumar's personal website">
+    <meta name="author" content="Sabrish Kumar Pradeep Kumar">
+    <meta name="theme-color" content="#222222">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/nicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/nicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/nicons/favicon-16x16.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style-3.css">
+      
+    <title>Sabrish Kumar Pradeep Kumar</title>
+  </head>
+  <body>
+    <div class="container pt-5 allstuffp">
+        <div class="row pt-5 allstuff">
+            <div class="col-md-4 pt-5">
+                <div class="fixed-posi">
+                Sabrish Kumar Pradeep Kumar
+                <img src="images/profile-pixel.png" class="profilepic pt-3 pb-2">
+                <div class="pt-5 menur"><a class="menulink" target="_blank" href="mailto:sabrishpradeepkumar@gmail.com">email address</a></div>
+                </div>
+            </div>
+            <div class="col-md-8 pt-5 about">
+                <div class="section">
+                    <h2>WORK EXPERIENCE</h2>
+                    
+                    <h3>Meta Platforms</h3>
+                    <p><em>Software Engineer</em> | New York City, NY | Oct 2023 - Current</p>
+                    <ul>
+                        <li>Decommissioned legacy pipelines, saving $200K+ annually in infra costs and improving data reliability across IG and Messenger.</li>
+                        <li>Directed quarterly synchronization of Global Business Group tier graphs, aligning sales, engineering, and planning, unlocking tens of millions in revenue recognition and driving incremental revenue growth.</li>
+                        <li>Automated global CX survey pipelines, boosting engagement by 23%, cutting manual ops by 80%, and delivering timely insights with significant operational savings.</li>
+                        <li>Architected the Anaplan Canonical Framework to standardize sales planning, reducing onboarding by 70%, improving forecast accuracy, and cutting SLAs by 50% (T-6 → T-3). Built monitoring dashboards that reduced root-cause investigation time by 60% and resolved a 5-year pipeline issue.</li>
+                        <li>Developed scalable logging and monitoring infrastructure for Instagram, including Story Highlights, Group Chats, and ad impression logging, improving traceability, debugging efficiency by 60%, and enabling new product monetization strategies.</li>
+                        <li>Enforced privacy compliance at scale by revising asset privacy rules and implementing automated governance checks, ensuring long-term adherence to evolving data regulations.</li>
+                    </ul>
+
+                    <h3>Zenfra, Virtual Tech Gurus</h3>
+                    <p><em>Software Engineer</em> | Irving, TX | Aug 2023 - Sept 2023</p>
+                    <ul>
+                        <li>Architected and deployed a scalable log ingestion and transformation framework that unified vendor data (Dell, Microsoft, VMware) into a centralized observability platform, boosting system reliability and reducing manual troubleshooting by 60%.</li>
+                        <li>Built backend services to automate compliance reporting and infrastructure monitoring, enabling proactive incident detection and streamlined operations, which lowered operational overhead by 30% and improved customer infrastructure uptime.</li>
+                    </ul>
+
+                    <h3>Tesla Inc</h3>
+                    <p><em>Software Engineer Intern</em> | Fremont, CA | Jan 2023 - May 2023</p>
+                    <ul>
+                        <li>Developed back-end schema design and scalable architecture for the Supply Chain Optimization team and constructed ETL and CI/CD pipelines with optimized SQL code for complex datasets using MSSQL, PostgreSQL, and NoSQL in a containerized environment with configuration management using Docker, Kubernetes, and deployment using Jenkins. Enabled data accessibility across Supply Chain over 80%. Improved dashboard load performance by 98%.</li>
+                        <li>Designed an scalable architecture to process and extract data as a ETL pipeline from APIs such as Rapid Ratings, and Qualtrics using python and developed Cron jobs using orchestration tools like Airflow. Additionally, performed data analysis for KPIs in accordance with external and Internal stakeholders.</li>
+                    </ul>
+
+                    <h3>Meta Platforms (Facebook)</h3>
+                    <p><em>Software Engineer Intern</em> | Menlo Park, CA | May 2022 - August 2022</p>
+                    <ul>
+                        <li>Developed and optimized internal pipelines using Hive & Presto, orchestrated via Airflow, and deployed scalable data models in production. Enhanced SEV detection and monitoring systems across Meta, improving incident visibility and response time. Solution was adopted company-wide, powering dashboards and incident workflows used by all product teams.</li>
+                        <li>The load time of a dashboard was increased from 45.8s to 4.5s. The dashboard was used across Meta by different product groups to obtain insights on them.</li>
+                    </ul>
+
+                    <h3>Zoho Corporation</h3>
+                    <p><em>Software Engineer Intern</em> | Chennai, India | March 2021 - June 2021</p>
+                    <ul>
+                        <li>Delivered iOS based Mobile Applications developed using Swift. Worked on various Zoho related products and developed mobile applications respectively and Developed iOS UI for Zoho Applications and updated the email validation with better time complexity for apps such as Zoho Cliq and Zoho People.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>EDUCATION</h2>
+                    <p><strong>Master of Science in Computer Science</strong> | Arizona State University, Tempe, AZ | Aug 2021 - May 2023</p>
+                    <p>GPA : 4.0/4.0 (Gold Medalist)</p>
+                    <p><strong>Bachelor of Engineering in Computer Science and Engineering</strong> | Madras Institute of Technology, Anna University, Chennai, India | Aug 2017 - May 2021</p>
+                </div>
+
+                <div class="section">
+                    <h2>SKILLS</h2>
+                    <p><strong>Programming:</strong> Python, Hack, PHP,, C++, Java, MySQL, Oracle Database, PostgreSQL, MSSQL, HTML, CSS, Angular JS, React JS, ETL</p>
+                    <p><strong>Toolbox:</strong> Keras, PyTorch, Tensorflow, Pandas, NumPy, SciPy, OpenCV, Scikit-Learn, Matplotlib, Apache Spark, Hive, Airflow, Presto, Xcode, Tableau, Jenkins, AWS S3, D3 JS, Docker</p>
+                </div>
+
+                <div class="section">
+                    <h2>RESEARCH</h2>
+                    <p><strong>Optimizing Infection Notification in Contact Tracing, MIT, AU</strong></p>
+                    <p>Leveraged graph databases and CNNs to classify human movement, boosting efficiency and reducing mobile battery usage, while predicting potential infections using ML models.</p>
+                    <p><strong>Supervised-Learning Approaches to Inter-UAV Collision Avoidance, MIT, AU</strong></p>
+                    <p>Developed efficient O(n) algorithms for drone velocity detection and collision avoidance, enabling 2D pattern formation and simulation of N-networked drones in convex cyclic formations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="assets/style-3.js"></script>
+  </body>
+</html>
