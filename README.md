@@ -1,11 +1,7 @@
-# Minimal Research Theme :microscope:
+# Ravi Vignesh — Portfolio
 
-Just a plain, simple and elegant one-page theme for research/academia.
+Personal portfolio website for Ravi Vignesh, a Software Engineer and Master's graduate in Data Science from the University of Maryland.
 
-If you are using this template, thank you! Do send a pull request if you would like your name here.
+Ravi is passionate about building scalable backend systems, distributed applications, and AI-powered tools. He has experience at Amazon Web Services (Bedrock), where he worked on cloud-native infrastructure and incident response automation. His work spans Java backend services, distributed systems, RAG pipelines, and data engineering.
 
-Sabrish Pradeep is a passionate and driven individual with a strong background in technology and problem-solving. With a keen interest in software development and competitive programming, Sabrish actively contributes to open-source projects on GitHub and hones his skills on platforms like LeetCode. He is committed to continuous learning and professional growth, as reflected in his active presence on LinkedIn. For inquiries or collaborations, feel free to reach out via email at sabrishpradeepkumar@gmail.com.
-
-
-
-
+For inquiries or collaborations, feel free to reach out via email at ravivigneshmega@gmail.com or connect on [LinkedIn](https://www.linkedin.com/in/ravi-vignesh-695967146/).

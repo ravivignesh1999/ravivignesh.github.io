@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabrish Kumar Pradeep Kumar - Portfolio</title>
+    <title>Ravi Vignesh - Portfolio</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -16,16 +16,16 @@
                     <span class="sr-only">Toggle navigation</span>
                     <i class="fas fa-bars"></i>
                 </button>
-                <a class="nav-name" href="#top">Sabrish Pradeep</a>
+                <a class="nav-name" href="#top">Ravi Vignesh</a>
             </div>
             <div class="nav-right">
                 <ul class="nav-links" id="primary-navigation">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
                     <li><a href="#professional">Professional</a></li>
                     <li><a href="#academic">Academic</a></li>
-                    <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#research">Research</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#teaching">Teaching</a></li>
                 </ul>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-sun"></i>
@@ -37,17 +37,17 @@
     <div class="container">
         <aside class="sidebar">
             <div class="profile">
-                <img src="images/sabrish_profile.jpeg" alt="Sabrish Kumar Pradeep Kumar" class="profile-pic">
-                <h1>Sabrish Kumar Pradeep Kumar</h1>
-                <p class="job-title">Software Engineer (Data) at Meta</p>
+                <img src="images\Ravi Vig Image.jpg" alt="Ravi Vignesh" class="profile-pic">
+                <h1>Ravi Vignesh</h1>
+                <p class="job-title">Software Engineer</p>
                 <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> New York City, NY</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:sabrishpradeepkumar@gmail.com">sabrishpradeepkumar@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Seattle, WA</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:ravivigneshmega@gmail.com">ravivigneshmega@gmail.com</a></p>
                 </div>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/dubblin27" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/dubblin27" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="assets/sabrish_resume_sde.pdf" target="_blank" title="Download Resume" class="resume-link"><i class="fas fa-download"></i></a>
+                    <a href="https://www.linkedin.com/in/ravi-vignesh-695967146/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/ravivignesh1999" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="assets\RAVI_VIGNESH_Resume.pdf" target="_blank" title="Download Resume" class="resume-link"><i class="fas fa-download"></i></a>
                 </div>
             </div>
         </aside>
@@ -56,87 +56,14 @@
             <section id="about" class="section">
                 <h2>About Me</h2>
                 <div class="about-content">
-                    <p>As a Software Engineer at <span class="highlight-text">Meta Platforms</span>, I specialize in the architecture and optimization of <span class="highlight-text">distributed systems</span>, <span class="highlight-text">databases</span>, and <span class="highlight-text">large-scale AI infrastructure</span>. My work is centered on resolving the critical trade-offs between planetary-scale data delivery and system reliability, with a specific focus on the rigorous demands of modern artificial intelligence systems.</p>
-                    <p>My professional experience at Meta, complemented by a <span class="highlight-text">Master of Science in Computer Science</span> (4.0 GPA) from <span class="highlight-text">Arizona State University</span>, provides me with a unique synthesis of practical engineering expertise and a strong theoretical foundation. Through my work on some of the world's largest systems, I have identified a recurring challenge: critical failures often arise not from algorithmic deficiencies, but from a lack of formal methods in system design, where data provenance and lineage are not treated as first-class citizens. This insight drives my research and engineering philosophy.</p>
-                    
-                    <div class="research-interests">
-                        <h3>Primary Research Interests</h3>
-                        <ul>
-                            <li><strong>Trustworthy AI Data Infrastructure:</strong> Engineering robust systems where data lineage and formal provenance are integral to the architecture, ensuring verifiability and reliability for AI/ML workloads.</li>
-                            <li><strong>Next-Generation Data Engines:</strong> Designing and implementing novel data processing engines that bridge the performance gap between conventional batch processing and real-time streaming, tailored for the unique demands of AI applications.</li>
-                            <li><strong>Intelligent Resource Management for AI Data Centers:</strong> Developing formalized methodologies for resource allocation and scheduling to optimize for cost, energy efficiency, and performance in large-scale AI training and inference environments.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="research" class="section">
-                <h2>Research Experience</h2>
-                <div class="research-items">
-                    <div class="research-item">
-                        <div class="research-header">
-                            <div class="timeline-header">
-                                <h3>Formal AI Data Provenance Platform</h3>
-                                <span class="timeline-date">2024 - 2025</span>
-                            </div>
-                            <h4>Meta Platforms</h4>
-                        </div>
-                        <div class="research-body">
-                            <ul>
-                                <li>Built a GraphSQL provenance fabric that captures stage-level lineage for 2,300+ AI pipelines with sub-5 minute freshness, enabling audit-ready replay of every dataset version.</li>
-                                <li>Codified dependency proofs using TLA+-backed model checking, shrinking SEV root-cause analysis from multi-day war rooms to &lt; 3 hours and eliminating 60% of false-positive alerts.</li>
-                                <li>Launched schema-integrity guardrails and automated rollback triggers that reduced training data regressions by 35% and preserved 11 PB of clean feature history.</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">GraphSQL</span>
-                            <span class="tech-tag">Distributed Systems</span>
-                            <span class="tech-tag">AI/ML</span>
-                        </div>
-                    </div>
-                    
-                    <div class="research-item">
-                        <div class="research-header">
-                            <div class="timeline-header">
-                                <h3>Graph-Powered Public Health Analytics</h3>
-                                <span class="timeline-date">2020 - 2021</span>
-                            </div>
-                            <h4>Madras Institute of Technology</h4>
-                        </div>
-                        <div class="research-body">
-                            <ul>
-                                <li>Designed multi-layer graph heuristics that fused Bluetooth, GPS, and transit feeds, improving exposure-detection recall by 22% while holding precision above 90% in city-wide pilots.</li>
-                                <li>Trained CNN + temporal attention models that segmented mobility routines with 91% F1 accuracy, providing public health teams actionable micro-cluster alerts within 12 minutes of ingestion.</li>
-                                <li>Formulated an adaptive handset sampling policy that reduced radio wakeups by 38%, extending device battery life by 18% without sacrificing infection notification latency.</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Graph Algorithms</span>
-                            <span class="tech-tag">Deep Learning</span>
-                            <span class="tech-tag">Mobile Computing</span>
-                        </div>
-                    </div>
-                    
-                    <div class="research-item">
-                        <div class="research-header">
-                            <div class="timeline-header">
-                                <h3>Autonomous Multi-UAV Coordination</h3>
-                                <span class="timeline-date">2019 - 2020</span>
-                            </div>
-                            <h4>Madras Institute of Technology</h4>
-                        </div>
-                        <div class="research-body">
-                            <ul>
-                                <li>Authored an O(n) cooperative velocity-obstacle planner that coordinated 40+ UAVs at 30 Hz, maintaining guaranteed separation envelopes even under GPS drift.</li>
-                                <li>Implemented a ROS/Gazebo swarm test harness with high-fidelity aerodynamic perturbations, cutting field-readiness cycles from six weeks to two by simulating 1,200 sorties per night.</li>
-                                <li>Encoded airspace safety contracts with temporal logic, eliminating boundary violations across 500+ autonomous missions and satisfying DGCA flight certification checks.</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Algorithm Design</span>
-                            <span class="tech-tag">Robotics</span>
-                            <span class="tech-tag">Geometric Computing</span>
-                        </div>
+                    <p><strong>Software Engineer</strong> and <strong>Data Science graduate</strong> from the <strong>University of Maryland</strong> with a passion for building scalable, reliable systems. Most recently at <strong>AWS</strong>, I shipped cloud-native services and AI-powered developer tools that improved team productivity.</p>
+                    <p>I specialize in <strong>backend systems</strong>, <strong>distributed applications</strong>, and leveraging <strong>AI</strong> to solve practical problems. I care about writing software that is clean, efficient, and built to last and I’m always exploring new technologies to sharpen my craft. Outside of work, I enjoy tackling challenging coding problems and building personal projects.</p>
+                    <div class="tech-stack" style="margin-top: 1rem;">
+                        <span class="tech-tag">Backend Systems</span>
+                        <span class="tech-tag">Distributed Applications</span>
+                        <span class="tech-tag">Cloud (AWS)</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">Data Science</span>
                     </div>
                 </div>
             </section>
@@ -144,130 +71,47 @@
             <section id="professional" class="section">
                 <h2>Professional Experience</h2>
                 <div class="timeline">
-                    <div class="timeline-item current">
+                    <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <img src="images/logos/meta-logo.png" alt="Meta Logo" class="company-logo">
+                            <img src="images/logos/Amazon_Web_Services_Logo.svg.png" alt="AWS Logo" class="company-logo">
+                            <div class="timeline-text">
+                                <div class="timeline-header">
+                                    <h3>Software Development Engineer</h3>
+                                    <span class="timeline-date">May 2025 - August 2025</span>
+                                </div>
+                                <h4>Amazon Web Services - Bedrock (Claude Infra)</h4>
+                                <p class="location">Seattle, WA</p>
+                                <div class="timeline-details" aria-hidden="true" hidden>
+                                    <ul>
+                                        <li>Improved production incident resolution efficiency by 62% (40→15 min MTTR) by building a distributed backend service using AWS SNS, SQS, and Lambda to automate infrastructure alert remediation across 100+ weekly production incidents.</li>
+                                        <li>Engineered a production RAG system (Bedrock + Kendra) for incident response, reducing engineer context-switching by 67% through instant SOP retrieval from 60+ documents.</li>
+                                        <li>Accelerated incident mitigation by 3× by building Java backend APIs integrated with a React dashboard, improving observability and streamlining operational workflows for production systems.</li>
+                                        <li>Implemented backend parsing and routing logic for CloudWatch alarm data, eliminating 6–8 manual investigation steps per ticket and saving an estimated ~520 engineering hours annually.</li>
+                                        <li><strong>Tech:</strong> Java, AWS (SNS, SQS, Lambda, CloudWatch, Bedrock, Kendra), Distributed Systems, Monitoring, APIs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <img src="images/logos/ncompass_techstudio_logo.jpg" alt="NCompass TechStudios Logo" class="company-logo">
                             <div class="timeline-text">
                                 <div class="timeline-header">
                                     <h3>Software Engineer</h3>
-                                    <span class="timeline-date">October 2023 - Present</span>
+                                    <span class="timeline-date">September 2021 - January 2024</span>
                                 </div>
-                                <h4>Meta Platforms</h4>
-                                <p class="location">New York City, NY</p>
-                                <div class="timeline-details" aria-hidden="true" hidden>
-                                    <ul>
-                                        <li>Decommissioned legacy pipelines, saving $200K+ annually while stabilizing Instagram and Messenger data flows.</li>
-                                        <li>Directed quarterly synchronization of Global Business Group tier graphs, aligning sales, engineering, and planning teams to unlock revenue recognition.</li>
-                                        <li>Automated global CX survey pipelines, boosting participation by 23%, cutting manual operations by 80%, and accelerating insight delivery.</li>
-                                        <li>Architected the Anaplan Canonical Framework to standardize sales planning, trimming onboarding by 70% and reducing forecast SLAs from T-6 to T-3.</li>
-                                        <li>Built scalable logging and monitoring for Instagram surfaces (Story Highlights, Group Chats, ad impressions) to improve traceability and monetize new features.</li>
-                                        <li>Implemented automated privacy governance checks, ensuring durable compliance across high-sensitivity data assets.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <img src="images/logos/zenfra-logo.jpeg" alt="Zenfra Logo" class="company-logo">
-                            <div class="timeline-text">
-                                <div class="timeline-header">
-                                    <h3>Software Engineer</h3>
-                                    <span class="timeline-date">August 2023 - September 2023</span>
-                                </div>
-                                <h4>Zenfra, Virtual Tech Gurus</h4>
-                                <p class="location">Irving, TX</p>
-                                <div class="timeline-details" aria-hidden="true" hidden>
-                                    <ul>
-                                        <li>Architected a scalable log ingestion and transformation framework that unified Dell, Microsoft, and VMware telemetry into a single observability platform.</li>
-                                        <li>Automated compliance reporting and infrastructure monitoring services, lowering operational overhead by 30% and improving customer uptime.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <img src="images/logos/tesla-logo.png" alt="Tesla Logo" class="company-logo">
-                            <div class="timeline-text">
-                                <div class="timeline-header">
-                                    <h3>Software Engineer Intern</h3>
-                                    <span class="timeline-date">January 2023 - May 2023</span>
-                                </div>
-                                <h4>Tesla Inc</h4>
-                                <p class="location">Fremont, CA</p>
-                                <div class="timeline-details" aria-hidden="true" hidden>
-                                    <ul>
-                                        <li>Designed supply-chain data schemas and resilient ETL/CI pipelines across MSSQL, PostgreSQL, and NoSQL stores, improving dashboard load performance by 98%.</li>
-                                        <li>Built Airflow-orchestrated integrations for Rapid Ratings and Qualtrics APIs, delivering KPI analytics for supply-chain stakeholders.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <img src="images/logos/meta-logo.png" alt="Meta Logo" class="company-logo">
-                            <div class="timeline-text">
-                                <div class="timeline-header">
-                                    <h3>Software Engineer Intern</h3>
-                                    <span class="timeline-date">May 2022 - August 2022</span>
-                                </div>
-                                <h4>Meta Platforms</h4>
-                                <p class="location">Menlo Park, CA</p>
-                                <div class="timeline-details" aria-hidden="true" hidden>
-                                    <ul>
-                                        <li>Developed Hive and Presto pipelines orchestrated with Airflow to strengthen SEV detection and monitoring across Meta.</li>
-                                        <li>Optimized a cross-product insights dashboard from 45.8 seconds to 4.5 seconds, enabling real-time decision-making for product teams.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <img src="images/logos/zoho-logo.png" alt="Zoho Logo" class="company-logo">
-                            <div class="timeline-text">
-                                <div class="timeline-header">
-                                    <h3>Software Engineer Intern</h3>
-                                    <span class="timeline-date">March 2021 - June 2021</span>
-                                </div>
-                                <h4>Zoho Corporation</h4>
+                                <h4>NCompass TechStudios</h4>
                                 <p class="location">Chennai, India</p>
                                 <div class="timeline-details" aria-hidden="true" hidden>
                                     <ul>
-                                        <li>Delivered Swift-based mobile experiences across Zoho’s productivity suite in partnership with cross-functional product teams.</li>
-                                        <li>Re-engineered email validation logic for Zoho Cliq and Zoho People, improving responsiveness and accuracy on iOS clients.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <img src="images/logos/tesark-logo.png" alt="Tesark Logo" class="company-logo">
-                            <div class="timeline-text">
-                                <div class="timeline-header">
-                                    <h3>Software Engineer Intern</h3>
-                                    <span class="timeline-date">June 2020 - August 2020</span>
-                                </div>
-                                <h4>Tesark Technologies</h4>
-                                <p class="location">Chennai, India</p>
-                                <div class="timeline-details" aria-hidden="true" hidden>
-                                    <ul>
-                                        <li>Supported client web application delivery by building responsive UI components and refining REST APIs alongside senior engineers.</li>
-                                        <li>Streamlined quality assurance through automated regression scripts and performance tuning for launch-critical features.</li>
+                                        <li>Built and maintained Java backend services for high-volume financial transaction workflows, processing 5M+ records/day across validation, routing, error handling, internal data access, and downstream system integration.</li>
+                                        <li>Optimized a PostgreSQL-backed validation service using indexing, query-plan tuning, and Redis read-through caching, reducing API P99 latency by 30%.</li>
+                                        <li>Developed an AWS Glue data pipeline moving 10M+ rows/day from RDS/S3 to Snowflake, adding partitioning and data validation checks to improve pipeline runtime by 25%.</li>
+                                        <li><strong>Tech:</strong> Java, Python, SQL, PostgreSQL, Redis, AWS Glue, RDS, S3, Snowflake, CloudWatch, Jenkins CI/CD, REST APIs</li>
                                     </ul>
                                 </div>
                             </div>
@@ -282,18 +126,17 @@
                     <div class="timeline-item highlight">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <img src="images/logos/asu-logo.png" alt="ASU Logo" class="institution-logo">
+                            <img src="images/logos/umd logo.jpg" alt="UMD Logo" class="institution-logo">
                             <div class="timeline-text">
                                 <div class="timeline-header">
-                                    <h3>Master of Science in Computer Science</h3>
-                                    <span class="timeline-date">August 2021 - May 2023</span>
+                                    <h3>Master of Science in Data Science</h3>
+                                    <span class="timeline-date">August 2024 - May 2026</span>
                                 </div>
-                                <h4>Arizona State University</h4>
-                                <p class="location">Tempe, AZ</p>
-                                <p class="achievement">GPA: 4.0/4.0 (Gold Medalist)</p>
+                                <h4>University of Maryland, College Park</h4>
+                                <p class="location">College Park, MD</p>
+                                <p class="achievement">GPA: 3.8/4.0</p>
                                 <ul>
-                                    <li>Research focus: Distributed Systems, AI Infrastructure, Data Management</li>
-                                    <li>Teaching Assistant for CSE 573: Semantic Web Mining</li>
+                                    <li>Research focus: Distributed Systems, AI Infrastructure, NLP</li>
                                 </ul>
                             </div>
                         </div>
@@ -320,33 +163,201 @@
                 </div>
             </section>
 
+            <section id="research" class="section">
+                <h2>Research Experience</h2>
+                <div class="research-items">
+                    <div class="research-item">
+                        <div class="research-header">
+                            <div class="timeline-header">
+                                <h3>Multi-Tenant API Gateway with Distributed Rate Limiting</h3>
+                            </div>
+                            <h4>Personal Project</h4>
+                        </div>
+                        <div class="research-body">
+                            <ul>
+                                <li>Designed a Java-based multi-tenant API gateway with per-tenant rate limiting using a Redis sliding-window algorithm, sustaining 12,000+ requests/min in concurrency tests.</li>
+                                <li>Integrated Resilience4j circuit breakers to isolate downstream failures, reducing recovery time from 45s to 10s in chaos testing.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Resilience4j</span>
+                            <span class="tech-tag">Distributed Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-header">
+                            <div class="timeline-header">
+                                <h3>Semantic Cache &amp; Query Optimization Engine</h3>
+                            </div>
+                            <h4>Personal Project</h4>
+                        </div>
+                        <div class="research-body">
+                            <ul>
+                                <li>Built a semantic caching layer for LLM APIs (pgvector + Redis) that deduplicates similar prompts before API calls, reducing redundant model invocations by 68%.</li>
+                                <li>Implemented query rewriting and observability with OpenTelemetry and Prometheus, enabling cache decisioning in 15ms during benchmarking.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">LLMs</span>
+                            <span class="tech-tag">pgvector</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">OpenTelemetry</span>
+                            <span class="tech-tag">Prometheus</span>
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-header">
+                            <div class="timeline-header">
+                                <h3>AtmoSense-Seq-Forecast</h3>
+                            </div>
+                            <h4>University of Maryland, College Park</h4>
+                        </div>
+                        <div class="research-body">
+                            <ul>
+                                <li>Evaluated a Transformer-based air-quality forecasting model over multi-station pollutant time-series data, comparing 48-hour predictions against a persistence baseline.</li>
+                                <li>Built evaluation scripts and visualizations for MAE/RMSE by horizon, forecast trajectories, and pollutant-level error analysis.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">Time Series</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Data Visualization</span>
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-header">
+                            <div class="timeline-header">
+                                <h3>Graph-Powered Public Health Analytics</h3>
+                            </div>
+                            <h4>Madras Institute of Technology</h4>
+                        </div>
+                        <div class="research-body">
+                            <ul>
+                                <li>Designed multi-layer graph heuristics that fused Bluetooth, GPS, and transit feeds, improving exposure-detection recall by 22% while holding precision above 90% in city-wide pilots.</li>
+                                <li>Trained CNN + temporal attention models that segmented mobility routines with 91% F1 accuracy, providing public health teams actionable micro-cluster alerts within 12 minutes of ingestion.</li>
+                                <li>Formulated an adaptive handset sampling policy that reduced radio wakeups by 38%, extending device battery life by 18% without sacrificing infection notification latency.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Graph Algorithms</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Mobile Computing</span>
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-header">
+                            <div class="timeline-header">
+                                <h3>Autonomous Multi-UAV Coordination</h3>
+                            </div>
+                            <h4>Madras Institute of Technology</h4>
+                        </div>
+                        <div class="research-body">
+                            <ul>
+                                <li>Authored an O(n) cooperative velocity-obstacle planner that coordinated 40+ UAVs at 30 Hz, maintaining guaranteed separation envelopes even under GPS drift.</li>
+                                <li>Implemented a ROS/Gazebo swarm test harness with high-fidelity aerodynamic perturbations, cutting field-readiness cycles from six weeks to two by simulating 1,200 sorties per night.</li>
+                                <li>Encoded airspace safety contracts with temporal logic, eliminating boundary violations across 500+ autonomous missions and satisfying DGCA flight certification checks.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Algorithm Design</span>
+                            <span class="tech-tag">Robotics</span>
+                            <span class="tech-tag">Geometric Computing</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section skills">
+                <h2>Technical Skills</h2>
+                <div class="skill-group">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">REST APIs</span>
+                            <span class="tech-tag">Microservices</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Node.js / Express</span>
+                            <span class="tech-tag">Distributed Systems</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases &amp; Data</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Snowflake</span>
+                            <span class="tech-tag">AWS Glue</span>
+                            <span class="tech-tag">RDS</span>
+                            <span class="tech-tag">S3</span>
+                            <span class="tech-tag">Athena</span>
+                            <span class="tech-tag">ETL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Cloud &amp; DevOps</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">AWS Lambda</span>
+                            <span class="tech-tag">SNS</span>
+                            <span class="tech-tag">SQS</span>
+                            <span class="tech-tag">CloudWatch</span>
+                            <span class="tech-tag">IAM</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Jenkins</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI / ML &amp; GenAI</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">AWS Bedrock</span>
+                            <span class="tech-tag">Kendra</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">Embeddings</span>
+                            <span class="tech-tag">Vector Search</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Prompt Engineering</span>
+                            <span class="tech-tag">LLM Agents</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks &amp; Tools</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Node.js / Express</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="teaching" class="section">
                 <h2>Teaching Experience</h2>
                 <div class="teaching-items">
-                    <div class="teaching-item">
-                        <img src="images/logos/asu-logo.png" alt="ASU Logo" class="institution-logo">
-                        <div class="teaching-content">
-                            <div class="timeline-header">
-                                <h3>Instructor - Fundamentals of Coding & Algorithms Cohort</h3>
-                            </div>
-                            <span class="timeline-date timeline-date--secondary">Fall 2022</span>
-                            <h4>Arizona State University</h4>
-                            <p>Mentored students from first-generation and career-transitioning backgrounds through weekday sessions, providing targeted support in Python and data structures to deepen their understanding of foundational academic principles.</p>
-                        </div>
-                    </div>
-
-                    <div class="teaching-item">
-                        <img src="images/logos/asu-logo.png" alt="ASU Logo" class="institution-logo">
-                        <div class="teaching-content">
-                            <div class="timeline-header">
-                                <h3>Teaching Assistant - CSE 573: Semantic Web Mining</h3>
-                            </div>
-                            <span class="timeline-date timeline-date--secondary">Spring 2022</span>
-                            <h4>Arizona State University</h4>
-                            <p>Assisted in course delivery, grading, and student mentoring for graduate-level semantic web mining course.</p>
-                        </div>
-                    </div>
-
                     <div class="teaching-item">
                         <img src="images/logos/anna-university-logo.png" alt="Anna University Logo" class="institution-logo">
                         <div class="teaching-content">
@@ -357,20 +368,6 @@
                             <h4>Madras Institute of Technology, Anna University</h4>
                             <p>Led programming labs and tutorials for undergraduate students, covering fundamental algorithms and data structures.</p>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skills" class="section skills">
-                <h2>Technical Skills</h2>
-                <div class="skill-group">
-                    <div class="skill-category">
-                        <h3>Programming</h3>
-                        <p>Python, Hack, PHP, C++, Java, MySQL, Oracle Database, PostgreSQL, MSSQL, HTML, CSS, Angular JS, React JS, ETL</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools & Technologies</h3>
-                        <p>Keras, PyTorch, Tensorflow, Pandas, NumPy, SciPy, OpenCV, Scikit-Learn, Matplotlib, Apache Spark, Hive, Airflow, Presto, Xcode, Tableau, Jenkins, AWS S3, D3 JS, Docker</p>
                     </div>
                 </div>
             </section>
