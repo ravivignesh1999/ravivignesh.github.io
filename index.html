@@ -380,6 +380,11 @@
                 </div>
             </section>
         </main>
+
+        <footer class="site-footer">
+            <p>Built and designed by <strong>Ravi Vignesh</strong></p>
+            <p>All rights reserved. &copy; <span id="footer-year"></span></p>
+        </footer>
     </div>
 
     <div id="experience-overlay" class="experience-overlay" aria-hidden="true" hidden>
@@ -941,6 +946,8 @@
 
         updateActiveLink();
         window.addEventListener('scroll', updateActiveLink, { passive: true });
+
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

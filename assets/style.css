@@ -867,6 +867,21 @@ li {
     color: var(--text-secondary);
 }
 
+.site-footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.8;
+}
+
+.site-footer strong {
+    color: var(--accent-primary);
+}
+
 .research {
     margin-top: 4rem;
     margin-bottom: 4rem;
